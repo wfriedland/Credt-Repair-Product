@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UserDebtDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="UserCreditSummary">
+          <Key>
+            <PropertyRef Name="summaryID" />
+          </Key>
+          <Property Name="summaryID" Type="int" Nullable="false" />
+          <Property Name="totalAccounts" Type="int" />
+          <Property Name="openAccounts" Type="int" />
+          <Property Name="closedAccounts" Type="int" />
+          <Property Name="totalBalance" Type="money" />
+          <Property Name="monthlyPayments" Type="money" />
+          <Property Name="unsatisfactoryAccounts" Type="int" />
+          <Property Name="derogatoryAccounts" Type="int" />
+          <Property Name="inquiresLast2Years" Type="int" />
+          <Property Name="publicRecords" Type="int" />
+          <Property Name="userID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="reportDate" Type="date" />
+          <Property Name="creditScore" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserDebtDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="autopay" Type="bit" />
+          <Property Name="autopayDate" Type="date" />
+          <Property Name="debtBad" Type="bit" />
+          <Property Name="debtCompanyName" Type="nvarchar" MaxLength="128" />
+          <Property Name="debtCompanyStreeAddress" Type="nvarchar" MaxLength="128" />
+          <Property Name="debtCompanyCtiy" Type="nvarchar" MaxLength="128" />
+          <Property Name="debtCompanyState" Type="nvarchar" MaxLength="128" />
+          <Property Name="debtCompanyZip" Type="nvarchar" MaxLength="9" />
+          <Property Name="debtCompanyPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="nickname" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="accountType" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="dateOpened" Type="date" />
+          <Property Name="dateLastReported" Type="date" />
+          <Property Name="creditLimit" Type="money" />
+          <Property Name="monthlyPayment" Type="money" />
+          <Property Name="balance" Type="money" />
+          <Property Name="pastDueBalance" Type="nchar" MaxLength="10" />
+          <Property Name="paymentHistory" Type="nvarchar" MaxLength="128" />
+          <Property Name="comments" Type="nvarchar" MaxLength="128" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="128" />
+          <Property Name="reportDate" Type="date" />
+          <Property Name="userID" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UserDebtDataModelStoreContainer">
+          <EntitySet Name="UserCreditSummary" EntityType="Self.UserCreditSummary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDebtDetails" EntityType="Self.UserDebtDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UserDebtDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserDebtDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="autopay" Type="Boolean" />
+          <Property Name="autopayDate" Type="DateTime" Precision="0" />
+          <Property Name="debtBad" Type="Boolean" />
+          <Property Name="debtCompanyName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="debtCompanyStreeAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="debtCompanyCtiy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="debtCompanyState" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="debtCompanyZip" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="debtCompanyPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="accountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="accountType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="accountStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateOpened" Type="DateTime" Precision="0" />
+          <Property Name="dateLastReported" Type="DateTime" Precision="0" />
+          <Property Name="creditLimit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="monthlyPayment" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pastDueBalance" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="paymentHistory" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="comments" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="remarks" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="reportDate" Type="DateTime" Precision="0" />
+          <Property Name="userID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UserDebtDataEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserDebtDetails" EntityType="Self.UserDebtDetail" />
+          <EntitySet Name="UserCreditSummaries" EntityType="UserDebtDataModel.UserCreditSummary" />
+        </EntityContainer>
+        <EntityType Name="UserCreditSummary">
+          <Key>
+            <PropertyRef Name="summaryID" />
+          </Key>
+          <Property Name="summaryID" Type="Int32" Nullable="false" />
+          <Property Name="totalAccounts" Type="Int32" />
+          <Property Name="openAccounts" Type="Int32" />
+          <Property Name="closedAccounts" Type="Int32" />
+          <Property Name="totalBalance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="monthlyPayments" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="unsatisfactoryAccounts" Type="Int32" />
+          <Property Name="derogatoryAccounts" Type="Int32" />
+          <Property Name="inquiresLast2Years" Type="Int32" />
+          <Property Name="publicRecords" Type="Int32" />
+          <Property Name="userID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="reportDate" Type="DateTime" Precision="0" />
+          <Property Name="creditScore" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UserDebtDataModelStoreContainer" CdmEntityContainer="UserDebtDataEntities1">
+          <EntitySetMapping Name="UserDebtDetails">
+            <EntityTypeMapping TypeName="UserDebtDataModel.UserDebtDetail">
+              <MappingFragment StoreEntitySet="UserDebtDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="autopay" ColumnName="autopay" />
+                <ScalarProperty Name="autopayDate" ColumnName="autopayDate" />
+                <ScalarProperty Name="debtBad" ColumnName="debtBad" />
+                <ScalarProperty Name="debtCompanyName" ColumnName="debtCompanyName" />
+                <ScalarProperty Name="debtCompanyStreeAddress" ColumnName="debtCompanyStreeAddress" />
+                <ScalarProperty Name="debtCompanyCtiy" ColumnName="debtCompanyCtiy" />
+                <ScalarProperty Name="debtCompanyState" ColumnName="debtCompanyState" />
+                <ScalarProperty Name="debtCompanyZip" ColumnName="debtCompanyZip" />
+                <ScalarProperty Name="debtCompanyPhone" ColumnName="debtCompanyPhone" />
+                <ScalarProperty Name="nickname" ColumnName="nickname" />
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="accountType" ColumnName="accountType" />
+                <ScalarProperty Name="accountStatus" ColumnName="accountStatus" />
+                <ScalarProperty Name="dateOpened" ColumnName="dateOpened" />
+                <ScalarProperty Name="dateLastReported" ColumnName="dateLastReported" />
+                <ScalarProperty Name="creditLimit" ColumnName="creditLimit" />
+                <ScalarProperty Name="monthlyPayment" ColumnName="monthlyPayment" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="pastDueBalance" ColumnName="pastDueBalance" />
+                <ScalarProperty Name="paymentHistory" ColumnName="paymentHistory" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="reportDate" ColumnName="reportDate" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCreditSummaries">
+            <EntityTypeMapping TypeName="UserDebtDataModel.UserCreditSummary">
+              <MappingFragment StoreEntitySet="UserCreditSummary">
+                <ScalarProperty Name="creditScore" ColumnName="creditScore" />
+                <ScalarProperty Name="reportDate" ColumnName="reportDate" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="publicRecords" ColumnName="publicRecords" />
+                <ScalarProperty Name="inquiresLast2Years" ColumnName="inquiresLast2Years" />
+                <ScalarProperty Name="derogatoryAccounts" ColumnName="derogatoryAccounts" />
+                <ScalarProperty Name="unsatisfactoryAccounts" ColumnName="unsatisfactoryAccounts" />
+                <ScalarProperty Name="monthlyPayments" ColumnName="monthlyPayments" />
+                <ScalarProperty Name="totalBalance" ColumnName="totalBalance" />
+                <ScalarProperty Name="closedAccounts" ColumnName="closedAccounts" />
+                <ScalarProperty Name="openAccounts" ColumnName="openAccounts" />
+                <ScalarProperty Name="totalAccounts" ColumnName="totalAccounts" />
+                <ScalarProperty Name="summaryID" ColumnName="summaryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

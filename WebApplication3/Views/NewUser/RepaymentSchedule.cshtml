@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication3.Models.UserDebtDetail>
+@{
+    ViewBag.Title = "RepaymentSchedule";
+}
+
+<h2>Repayment Schedule</h2>
+
+@foreach (var debt in Model)
+{
+    <div class="col-sm-6 col-md-4">
+        Autopay: @debt.autopay <br />
+        Nickname: @debt.nickname <br />
+        Autopay Date: @debt.autopayDate<br />
+        Account Number: @debt.accountNumber <br />
+        Company: @debt.debtCompanyName <br />
+        Balance: @debt.balance <br />
+        Monthly Payment: @debt.monthlyPayment<br/>
+        Past Due Balance: @debt.pastDueBalance<br />
+        <hr>
+    </div>
+}
+<p>@Html.ActionLink("Next Step", "EliminationStrategy", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>

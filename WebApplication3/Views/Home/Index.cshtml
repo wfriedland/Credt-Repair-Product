@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Credit Repair</h1>
+    <p class="lead">Business Sales Pitch</p>
+    <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Get Started Now. Time is running out!</h2>
+        <p>
+            New User Set Up
+        </p>
+       <p> @Html.ActionLink("Register Now!", "Register", "Account", new { area = "" }, new { @class = "btn btn-default" })</p>    
+    </div>
+    <div class="col-md-4">
+        <h2>Returning Users</h2>
+        <p>Returning Users Click Here</p>
+        <p>@Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "btn btn-default" })</p>
+        <p>@Html.ActionLink("Bypass Login", "Index", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Videos and Testimonials</h2>
+        <p>More sales material</p>
+        <p>@Html.ActionLink("Watch Videos", "VideosAndTestimonials", "Home", new { area = "" }, new { @class = "btn btn-default" })</p>
+    </div>
+</div>

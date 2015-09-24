@@ -1,0 +1,67 @@
+﻿@if (Request.IsAuthenticated)
+{
+    ViewBag.Title = "DashboardView";
+
+
+    <h2>DashboardView</h2>
+
+    <div class="jumbotron">
+        <p>
+            Welcome Back (user)<br />
+            Features Scroll
+        </p>
+        <p>@Html.ActionLink("New User", "Index", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>
+    </div>
+
+    <div>
+        @Html.ActionLink("List of Debts", "Index", "UserDebtDetails")<br />
+    </div>
+    <div>
+        @Html.ActionLink("Credit Summary", "Index", "UserCreditSummaries")<br />
+    </div>
+
+    //<div class="row">
+        <div class="col-md-4">
+            <h2>Update Credit Report</h2>
+            <p>
+                Here is where you would go to update report informaiton.
+            </p>
+            <p>@Html.ActionLink("Check Information", "VerifyCreditReport", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Calendar</h2>
+            <p>Set up payment dates</p>
+            <p>@Html.ActionLink("Open Calendar", "Calendar", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Downloads and Tools</h2>
+            <p>Click Here to go to teh downloads and tools page</p>
+            <p>@Html.ActionLink("Go to Documents", "Documents", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Autopay</h2>
+            <p>Update Auto Pay Form</p>
+            <p>@Html.ActionLink("Autopayment View", "AutopayUpdateForm", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>View Debt Status</h2>
+            <p>View Debt Status</p>
+            <p>@Html.ActionLink("Debt Status", "DebtStatus", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get a new Credit Report</h2>
+            <p>Go through the process again</p>
+            <p>@Html.ActionLink("New Credit Report", "NewCreditReport", "Dashboard", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>View Repayment Schedule</h2>
+            <p>Look at your repayemnt schedule</p>
+            <p>@Html.ActionLink("Repayment Schedule", "RepaymentSchedule", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>
+        </div>
+
+    //</div>
+}
+else
+{
+    Response.Redirect("/Account/Login");
+}

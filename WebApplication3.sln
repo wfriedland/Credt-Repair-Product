@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{86924FAF-CDF4-4FA7-B4E6-E91FA8DB6076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRPTest", "CRPTest\CRPTest.csproj", "{AC429F37-D2D0-4C45-8C47-C50C0887E906}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cliffordcan.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WebApplication3\\WebApplication3.csproj
+		SccProjectName1 = WebApplication3
+		SccLocalPath1 = WebApplication3
+		SccProjectUniqueName2 = CRPTest\\CRPTest.csproj
+		SccProjectName2 = CRPTest
+		SccLocalPath2 = CRPTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86924FAF-CDF4-4FA7-B4E6-E91FA8DB6076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86924FAF-CDF4-4FA7-B4E6-E91FA8DB6076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86924FAF-CDF4-4FA7-B4E6-E91FA8DB6076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86924FAF-CDF4-4FA7-B4E6-E91FA8DB6076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC429F37-D2D0-4C45-8C47-C50C0887E906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC429F37-D2D0-4C45-8C47-C50C0887E906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC429F37-D2D0-4C45-8C47-C50C0887E906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC429F37-D2D0-4C45-8C47-C50C0887E906}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

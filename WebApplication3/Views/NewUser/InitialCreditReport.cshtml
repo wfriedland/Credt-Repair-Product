@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication3.Models.UserDebtDetail>
+@{
+    ViewBag.Title = "InitialCreditReport";
+}
+
+<h2>Initial Credit Report</h2>
+
+@foreach (var debt in Model)
+{
+    <div class="col-sm-6 col-md-4">
+        <p>
+            Account Number - @debt.accountNumber <br />
+            Company: @debt.debtCompanyName <br />
+            Balance: @debt.balance <br />
+            Monthly Payment: @debt.monthlyPayment <br/>
+            Past Due Balance: @debt.pastDueBalance <br />
+            Report Date: @debt.reportDate.Value.Date<br/>
+        </p>
+        <hr>
+    </div>
+}
+<p>@Html.ActionLink("Next Step", "VerifyCreditReport", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>

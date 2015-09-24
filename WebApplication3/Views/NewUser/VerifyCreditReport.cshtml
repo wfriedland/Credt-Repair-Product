@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication3.Models.UserDebtDetail>
+@{
+    ViewBag.Title = "VerifyCreditReport";
+}
+
+<h2>Verify Credit Report</h2>
+
+@foreach (var debt in Model)
+{
+        <div class="col-sm- col-md-4">
+            Autopay: @Html.CheckBox("autoPayCheckbox") <br />
+            Nickname: @debt.nickname @Html.TextBox("nicknameTextBox") <br />
+            Autopay Date: @debt.autopayDate @Html.TextBox("autoPayDateTextBox")<br/>
+            Account Number: @debt.accountNumber <br />
+            Company: @debt.debtCompanyName <br />
+            Balance: @debt.balance <br />
+            Past Due Balance: @debt.pastDueBalance<br />
+            <hr>
+        </div>
+}
+
+<p>@Html.ActionLink("Next Step", "DebtStatus", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>

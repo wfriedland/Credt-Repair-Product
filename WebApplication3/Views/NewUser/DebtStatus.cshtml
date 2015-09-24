@@ -1,0 +1,21 @@
+﻿@model IEnumerable<WebApplication3.Models.UserCreditSummary>
+@{
+    ViewBag.Title = "DebtStatus";
+}
+
+<h2>Debt Status</h2>
+
+@foreach (var debt in Model)
+{
+    
+    <p>
+        Number of Open Accounts: @debt.openAccounts <br />
+        Total Accounts: @debt.totalAccounts <br/>
+        Total Balance: @debt.totalBalance <br/>
+        Monthly Payments: @debt.monthlyPayments <br/>
+        Number of Unsatisfactory Accounts: @debt.unsatisfactoryAccounts <br/>
+        <hr>
+    </p>   
+}
+
+<p>@Html.ActionLink("Next Step", "RepaymentSchedule", "NewUser", new { area = "" }, new { @class = "btn btn-default" })</p>

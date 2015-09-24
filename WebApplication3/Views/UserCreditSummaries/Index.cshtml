@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication3.Models.UserCreditSummary>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.totalAccounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.openAccounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.closedAccounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlyPayments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unsatisfactoryAccounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.derogatoryAccounts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.inquiresLast2Years)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.publicRecords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reportDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.creditScore)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalAccounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.openAccounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.closedAccounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlyPayments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unsatisfactoryAccounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.derogatoryAccounts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inquiresLast2Years)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.publicRecords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reportDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creditScore)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.summaryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.summaryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.summaryID })
+        </td>
+    </tr>
+}
+
+</table>

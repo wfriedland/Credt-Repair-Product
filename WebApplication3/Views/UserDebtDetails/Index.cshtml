@@ -1,0 +1,171 @@
+﻿@model IEnumerable<WebApplication3.Models.UserDebtDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.autopay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.autopayDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtBad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyStreeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyCtiy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.debtCompanyPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nickname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.accountStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOpened)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateLastReported)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.creditLimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlyPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pastDueBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reportDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.autopay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autopayDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtBad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyStreeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyCtiy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.debtCompanyPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nickname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOpened)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateLastReported)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creditLimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlyPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pastDueBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paymentHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reportDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.userID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
